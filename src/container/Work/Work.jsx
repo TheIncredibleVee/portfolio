@@ -16,8 +16,6 @@ const Work = () => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
-      // eslint-disable-next-line no-console
-      console.log(data);
       data.sort((a, b) => {
         // eslint-disable-next-line no-underscore-dangle
         const c = new Date(a._createdAt);
