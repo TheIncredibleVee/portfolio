@@ -16,7 +16,17 @@ const Work = () => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
+      // eslint-disable-next-line no-console
+      console.log(data);
+      data.sort((a, b) => {
+        // eslint-disable-next-line no-underscore-dangle
+        const c = new Date(a._createdAt);
+        // eslint-disable-next-line no-underscore-dangle
+        const d = new Date(b._createdAt);
+        return c - d;
+      });
       setWorks(data);
+
       setFilterWork(data);
     });
   }, []);
@@ -38,10 +48,10 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
+      <h2 className="head-text">Some of my major <span>Projects</span></h2>
 
       <div className="app__work-filter">
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {['Web Development', 'ML-DA', 'Automation', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -95,11 +105,14 @@ const Work = () => {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>
+              {/* <hr style={{ border: '1px solid grey', width: '110%' }} /> */}
               <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
+              <p className="p-text" style={{ marginTop: 5, color: 'red' }}><b>Tech Stack: </b>{work.techStack.map((val, idx) => <span key={idx}> {val},</span>) }</p>
 
               <div className="app__work-tag app__flex">
                 <p className="p-text">{work.tags[0]}</p>
               </div>
+              {/* <hr style={{ border: '1px solid grey', width: '110%' }} /> */}
             </div>
           </div>
         ))}

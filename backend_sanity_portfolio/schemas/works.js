@@ -32,7 +32,7 @@ export default {
           hotspot: true,
         },
       },
-   
+      
       {
         name: 'tags',
         title: 'Tags',
@@ -41,6 +41,19 @@ export default {
          {
            name:'tag',
            title:'Tag',
+           type:'string'
+         }
+       ]
+      },
+      
+      {
+        name: 'techStack',
+        title: 'Tech Stack',
+       type:'array',
+       of: [
+         {
+           name:'libraryOrFramework',
+           title:'Library or Framework',
            type:'string'
          }
        ]
