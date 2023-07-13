@@ -31,11 +31,7 @@ const Footer = () => {
       .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
-      })
-      // eslint-disable-next-line no-console
-      .catch((err) => 
-      // console.log(err)
-      );
+      });
   };
 
   return (
