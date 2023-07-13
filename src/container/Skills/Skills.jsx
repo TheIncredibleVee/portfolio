@@ -16,7 +16,7 @@ const Skills = () => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
     setActiveEx(0);
-    console.log(activeEx);
+    // console.log(activeEx);
     client.fetch(query).then((data) => {
       data.sort((a, b) => {
         // eslint-disable-next-line no-underscore-dangle

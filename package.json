@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://theincrediblevee.github.io/portfolio/",
+  "homepage": "https://www.theincrediblevee.tech",
   "private": true,
   "dependencies": {
     "@sanity/client": "^2.23.2",

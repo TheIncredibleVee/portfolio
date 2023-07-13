@@ -16,7 +16,7 @@ const Education = () => {
     });
   }, []);
   // eslint-disable-next-line no-console
-  console.log(edu);
+  // console.log(edu);
   return (
     <>
       <motion.h2 className="head-text pb-6">Education</motion.h2>
